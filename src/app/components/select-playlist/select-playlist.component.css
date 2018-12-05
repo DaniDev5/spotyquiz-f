@@ -1,0 +1,22 @@
+.option, .optionInput {
+  padding: 20px;
+  margin: 10px;
+  flex-basis: 100%;
+  background: #fff;
+  color: black;
+  border-radius: 5px;
+}
+.option:hover {
+  background: var(--corporative);
+  color: white;
+  cursor: pointer;
+}
+input, textarea {
+  flex-basis: 100%;
+  font-family: Montserrat, Roboto, sans-serif;
+}
+
+.spinner{
+  display: flex;
+  justify-content: center;
+}

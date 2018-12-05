@@ -1,0 +1,16 @@
+<app-menubar></app-menubar>
+<div class="p-grid p-col-12 p-justify-center">
+  <div class="p-col-4" style="margin-top: 35px; position: relative">
+    <p-card title="Puntuación {{data.score}}" styleClass="ui-card-shadow">
+      <div class="score"><span style="display: inline-block; margin: 0 5px 0 0">Aciertos </span>{{data.score/100}} /
+        {{data.difficulty}}</div>
+      <div class="options" *ngFor="let game of data.gameScore">
+        <div class="option" [ngClass]="{'acierto': game.score == 1,
+        'error': game.score == 0}">
+          <img src="{{game.track.albumImages[1].url}}">
+          <div class="info">{{game.track.name}} -- {{game.track.albumName}}</div>
+        </div>
+      </div>
+    </p-card>
+  </div>
+</div>

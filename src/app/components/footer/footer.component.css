@@ -1,0 +1,26 @@
+footer {
+    /* position: absolute; */
+    /* bottom: 0;
+    left: 0;
+    right: 0; */
+    align-self: flex-end;
+    padding: 24px;
+    font-size: .85em;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul li a {
+    color: var(--font);
+    transition: color .3s ease;
+}
+
+ul li a:hover {
+    color: var(--corporative);
+}

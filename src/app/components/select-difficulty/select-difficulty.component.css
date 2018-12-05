@@ -1,0 +1,14 @@
+.option {
+  padding: 20px;
+  margin: 10px;
+  flex-basis: 100%;
+  background: #fff;
+  color: black;
+  border-radius: 5px;
+}
+
+.option:hover {
+  background: var(--corporative);
+  color: white;
+  cursor: pointer;
+}

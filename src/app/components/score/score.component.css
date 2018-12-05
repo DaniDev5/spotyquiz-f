@@ -1,0 +1,32 @@
+.options {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.option {
+  padding: 20px;
+  margin: 10px;
+  flex-basis: 100%;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+}
+
+.acierto {
+  background: var(--corporative);
+}
+
+.error {
+  background: red;
+}
+
+.info {
+  margin-top: 5px;
+}
+
+.score {
+  position: absolute;
+  top: 26px;
+  right: 30px;
+}

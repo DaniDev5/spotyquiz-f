@@ -1,0 +1,65 @@
+<app-menubar></app-menubar>
+<div class="p-grid p-justify-center" style="margin-top: 35px;">
+
+  <div class="p-grid p-col-8 p-justify-between">
+    <h2 style="margin: 0">Mis estadísticas</h2>
+  </div>
+
+  <div class="p-grid p-col-8 p-justify-end">
+    <ul class="navigation">
+      <li (click)="card()"><i class="fas fa-th-large" title="Tarjetas"></i></li>
+      <li (click)="table()"><i class="fas fa-list" title="Lista"></i></li>
+    </ul>
+  </div>
+
+
+
+  <div *ngIf="cardVisible" class="p-grid p-col-8 p-justify-center">
+    <div *ngIf="!stats">No tienes estadísticas.</div>
+    <div *ngFor="let game of userStats" class="p-col-6" style="margin-top: -8px">
+      <p-card title="{{game.playlistName}}" styleClass="ui-card-shadow">
+        <div class="stats">
+          <div class="option" [style.background]="difficultyGradient(game)">
+            <div>Dificultad </div>
+            <div>{{levelDifficulty[game.difficulty]}}</div>
+          </div>
+          <div class="option" [style.background]="scoreGradient(game)">
+            <div>Puntuación </div>
+            <div>{{game.score}} / {{100 * game.difficulty}}</div>
+          </div>
+          <div class="option">
+            <div>Fecha </div>
+            <div>{{game.gameDate | date: 'dd/MM/yy - hh:mm'}}</div>
+          </div>
+        </div>
+      </p-card>
+    </div>
+  </div>
+
+  <div *ngIf="tableVisible" class="p-grid p-col-8 p-justify-center">
+    <div *ngIf="!stats">
+      No tienes estadísticas.
+    </div>
+
+    <div *ngIf="stats" class="s-card">
+      <table>
+        <thead>
+          <tr>
+            <th>Playlist</th>
+            <th>Dificultad</th>
+            <th>Fecha</th>
+            <th>Puntuación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let game of userStats">
+            <td>{{ game.playlistName }}</td>
+            <td>{{ levelDifficulty[game.difficulty] }}</td>
+            <td>{{ game.gameDate | date: 'dd/MM/yy - hh:mm' }}</td>
+            <td>{{ game.score}} / {{100 * game.difficulty }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

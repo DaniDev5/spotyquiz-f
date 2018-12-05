@@ -1,0 +1,78 @@
+.score {
+  position: absolute;
+  top: 26px;
+  right: 30px;
+}
+
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 2px;
+}
+
+.col {
+  width: 15px;
+  margin: 0 0.25vw;
+}
+
+.col-1 {
+  background: #f368e0;
+  height: 23px;
+  animation: dance .51s infinite alternate;
+}
+.col-2 {
+  background: #ff9f43;
+  height: 18px;
+  animation: dance .5s infinite alternate;
+}
+.col-3 {
+  background: #ee5253;
+  height: 26px;
+  animation: dance .52s infinite alternate;
+}
+
+.col-4 {
+  background: #0abde3;
+  height: 42px;
+  animation: dance .53s infinite alternate;
+}
+.col-5 {
+  background: var(--corporative);
+  height: 31px;
+  animation: dance .54s infinite alternate;
+}
+
+@keyframes dance {
+  0% {
+    height: 2px;
+  }
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.option {
+  padding: 20px;
+  margin: 10px;
+  flex-basis: 100%;
+  background: #fff;
+  color: black;
+  border-radius: 5px;
+}
+
+.option:hover {
+  background: var(--corporative);
+  color: white;
+  cursor: pointer;
+}
+
+.reproductor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}

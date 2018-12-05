@@ -1,0 +1,61 @@
+<!-- <div *ngIf="error">
+  <p-message severity="error" [text]="error"></p-message>
+</div> -->
+<div *ngIf="!isAuth">
+  <div class="p-grid">
+    <div class="p-col-12">
+      <h1 class="title">SpotiQuiz</h1>
+      <div class="login">
+        <a href="https://accounts.spotify.com/es-ES/authorize?client_id=92ed57a15a9d488285f45b9ef0c7714a&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A4200%2Fcallback&state=x4xkmn9pu3j6ukrs8n&scope=user-read-birthdate%2Cuser-read-email&show_dialog=true">Iniciar
+          sesion</a>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <div class="col col-1"></div>
+      <div class="col col-2"></div>
+      <div class="col col-3"></div>
+      <div class="col col-4"></div>
+      <div class="col col-5"></div>
+      <div class="col col-6"></div>
+      <div class="col col-7"></div>
+      <div class="col col-8"></div>
+      <div class="col col-9"></div>
+      <div class="col col-10"></div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="isAuth" class="ultra-container">
+  <app-menubar></app-menubar>
+  <div class="ultra-flex">
+
+    <div class="p-grid p-justify-center">
+      <div class="p-col-4" class="perfil">
+        <h2 style="margin: 0; line-height: 45px">Bienvenido {{currentUser.displayName}}</h2>
+      </div>
+    </div>
+
+
+    <div class="p-grid p-justify-center">
+      <div class="p-col-3">
+        <p-card title="Un jugador" styleClass="ui-card-shadow">
+          ¿De verdad conoces tus playlists? ¿Crees que sabes lo suficiente sobre música? Compruébalo en este desafío
+          <p-footer>
+            <button pButton type="button" label="Seleccionar" routerLink="/difficulty"></button>
+          </p-footer>
+        </p-card>
+      </div>
+      <div class="p-col-3">
+        <p-card title="Multijugador" styleClass="ui-card-shadow">
+          Enfréntate a otros jugadores! ¿Serás el ganador del duelo...?
+          <p-footer>
+            <button pButton type="button" disabled="true" label="Próximamente..."></button>
+          </p-footer>
+        </p-card>
+      </div>
+    </div>
+    <app-footer class="p-col-12 ultra-flex-end"></app-footer>
+  </div>
+
+</div>

@@ -1,0 +1,36 @@
+<app-menubar></app-menubar>
+<div class="p-grid p-col-12 p-justify-center">
+  <div class="p-col-4" style="margin-top: 35px;">
+
+    <p-card title="Playlists genéricas:" styleClass="ui-card-shadow">
+      <div *ngIf="!genericPlaylists">
+        <p-progressSpinner class="spinner"></p-progressSpinner>
+      </div>
+      <div *ngFor="let playlist of genericPlaylists">
+        <div class="option" (click)="selectPlaylist(playlist)">
+          {{playlist.name}}
+        </div>
+      </div>
+    </p-card>
+
+    <p-card title="Tus playlists" styleClass="ui-card-shadow">
+      <div *ngIf="!userPlaylists">
+        <p-progressSpinner class="spinner"></p-progressSpinner>
+      </div>
+      <div *ngFor="let playlist of userPlaylists">
+        <div class="option" (click)="selectPlaylist(playlist)">
+          {{playlist.name}}
+        </div>
+      </div>
+    </p-card>
+
+    <p-card title="Personalizada:" styleClass="ui-card-shadow">
+      <div class="ui-inputgroup optionInput">
+        <input (keydown.enter)="searchPlaylist()" class="input" type="text" pInputText placeholder="Introduce ID o URL"
+          [(ngModel)]="inputPlaylistId">
+        <button pButton type="button" label="Buscar" (click)="searchPlaylist()"></button>
+      </div>
+    </p-card>
+
+  </div>
+</div>

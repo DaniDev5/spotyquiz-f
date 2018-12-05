@@ -1,0 +1,59 @@
+<div *ngIf="isAuth">
+<nav class="with-dropdown navbar navbar-static-top navbar-default navbar-semi-transparent navbar-highlight-factory-yellow" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <ul class="nav">
+        <li class="dropdown">
+          <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+            <img class="navbar-user-img img-circle" src="{{currentUser.profileImg}}" alt="Foto de perfil">
+          </a>
+          <ul class="dropdown-menu dropdown-menu-right" role="menu">
+            <li><a (click)="logout()">Cerrar sesión</a></li>
+          </ul>
+        </li>
+      </ul>
+      <a routerLink="/" class="navbar-brand">
+        <div class="left">
+          <div class="logo">
+            <div class="col col-1"></div>
+            <div class="col col-2"></div>
+            <div class="col col-3"></div>
+            <div class="col col-4"></div>
+            <div class="col col-5"></div>
+          </div>
+          <div>Spotiquiz</div>
+        </div>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a routerLink="/stats">Estadísticas</a></li>
+        <li role="separator" class="divider hidden-xs hidden-sm"></li>
+        <li *ngIf="isPlaying"><a routerLink="/difficulty">Empezar partida</a></li>
+        <li *ngIf="!isPlaying"><a routerLink="/difficulty">Volver a jugar</a></li>
+        <li class="dropdown alternate hidden-xs hidden-sm">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+            <img class="navbar-user-img img-circle" src="{{currentUser.profileImg}}" alt="Foto de perfil"> {{currentUser.displayName}}
+            <svg class="svg-chevron-down" viewBox="0 0 1024 1024">
+              <path class="path1" d="M476.455 806.696l-381.164-381.164q-14.621-14.621-14.621-35.293t14.621-34.789 35.293-14.117 34.789 14.117l342.846 343.35 349.4-349.4q14.621-14.117 35.293-14.117t34.789 14.117 14.117 34.789-14.117 34.789l-381.164 381.164q-19.159 19.159-38.318 19.159t-31.764-12.605z"></path>
+            </svg>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-right" role="menu">
+            <li>
+              <a routerLink="/user/stats">Mis estadísticas</a>
+            </li>
+            <li>
+              <a (click)="logout()">Cerrar sesión</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</div>

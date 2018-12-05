@@ -1,0 +1,109 @@
+.title {
+  color: var(--font);
+  font-size: 8vw;
+  text-align: center;
+}
+
+.perfil {
+  display: flex; 
+  justify-content: center; 
+  padding-top: 10vh;
+  padding-bottom: 5vh;
+}
+
+.perfil img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+
+a {
+  padding: 20px 40px;
+  text-decoration: none;
+  color: var(--font);
+  background: var(--corporative);
+  width: fit-content;
+  display: block;
+  position: absolute;
+  left: 50%;
+  margin-left: -97px;
+  z-index: 1000;
+}
+
+a:hover {
+  color: var(--font);
+  background: var(--corporative_resalted);
+}
+
+.bottom {
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 0;
+  z-index: 0;
+}
+
+.col {
+  width: 8vw;
+  margin: 0 1vw;
+}
+
+.col-1 {
+  background: #f368e0;
+  height: 50vh; 
+  animation: dance .51s infinite alternate;
+}
+.col-2 {
+  background: #ff9f43;
+  height: 22vh;
+  animation: dance .5s infinite alternate;
+}
+.col-3 {
+  background: #ee5253;
+  height: 32vh;
+  animation: dance .52s infinite alternate;
+}
+.col-4 {
+  background: #0abde3;
+  height: 24vh;
+  animation: dance .53s infinite alternate;
+}
+.col-5 {
+  background: var(--corporative);
+  height: 31vh;
+  animation: dance .54s infinite alternate;
+}
+.col-6 {
+  background: #f368e0;
+  height: 19vh;
+  animation: dance .55s infinite alternate;
+}
+.col-7 {
+  background: #ff9f43;
+  height: 37vh;
+  animation: dance .54s infinite alternate;
+}
+.col-8 {
+  background: #ee5253;
+  height: 28vh;
+  animation: dance .53s infinite alternate;
+}
+.col-9 {
+  background: #0abde3;
+  height: 23vh;
+  animation: dance .52s infinite alternate;
+}
+.col-10 {
+  background: var(--corporative);
+  height: 45vh;
+  animation: dance .51s infinite alternate;
+}
+
+@keyframes dance {
+  0% {
+    height: 5vh;
+  }
+}
+

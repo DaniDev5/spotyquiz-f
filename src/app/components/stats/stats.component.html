@@ -1,0 +1,37 @@
+<app-menubar></app-menubar>
+<div *ngIf="!games" class="p-grid p-justify-center" style="margin-top: 35px;">Todavía no tenemos Top ranking</div>
+<div *ngIf="games" class="p-grid p-justify-center" style="margin-top: 35px;">
+    <div class="p-grid p-col-8 p-justify-between">
+        <h2 style="margin: 0">Top ranking</h2>
+        <div class="search">
+            <input type="text" #inputPlaylist class="search__input" (keyup)="searchPlaylists(inputPlaylist.value)" placeholder="Nombre playlist...">
+            <button pButton label="Buscar" (click)="searchPlaylists(inputPlaylist.value)"></button>
+        </div>
+    </div>
+    <div class="p-col-8">
+        <div class="s-card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Jugador</th>
+                        <th>Playlist</th>
+                        <th>Dificultad</th>
+                        <th>Fecha</th>
+                        <th>VS</th>
+                        <th>Puntuación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let game of selectedGames">
+                        <td>{{ game.user.displayName }}</td>
+                        <td>{{ game.playlistName }}</td>
+                        <td>{{ levelDifficulty[game.difficulty] }}</td>
+                        <td>{{ game.gameDate | date:'dd/MM/yy hh:mm' }}</td>
+                        <td><button pButton (click)="play(game.difficulty, game.playlistPlayed)" label="Desafiar"></button></td>
+                        <td>{{ game.score }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
